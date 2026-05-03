@@ -1,17 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import { useTheme } from '../../lib/ThemeContext'
+
 export default function Hero() {
+
+    const { theme, toggle } = useTheme();
+
+
+    const isDark = theme === "dark";
+
+    const logo_tmave = '/public/civim-logo-modra - kópia.png'
+const logo_svetla = '/public/logoTmave - kópia.png'
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-background">
       {/* Background gym photo */}
       <div className="absolute inset-0">
+        
         <img
           src="https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-002-scaled.jpg"
           alt="Cvič Sám - súkromná posilňovňa"
           className="w-full h-full object-cover opacity-20 dark:opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
       </div>
 
@@ -19,14 +31,24 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           {/* Left */}
           <div>
+            {isDark ?   <motion.img
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              src={logo_tmave}
+              alt="Cvič Sám"
+              className="h-16 mb-8"
+            /> : 
             <motion.img
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              src="https://media.base44.com/images/public/user_69dcd0ab7f89db2e942fbb31/77c707a77_civim-logo-modra.png"
+              src={logo_svetla}
               alt="Cvič Sám"
               className="h-16 mb-8"
             />
+             }
+          
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

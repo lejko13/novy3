@@ -4,17 +4,19 @@ import { Menu, X, ChevronDown, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../lib/ThemeContext'
 
-const LOGO_URL = "https://media.base44.com/images/public/user_69dcd0ab7f89db2e942fbb31/77c707a77_civim-logo-modra.png";
+
+import { useNavigate } from 'react-router-dom';
+
+
 
 const navLinks = [
-  { label: "Domov", href: "#hero" },
-  { label: "Ako to funguje", href: "#ako-to-funguje" },
-  { label: "Cenník", href: "#cennik" },
-  { label: "Trénerka", href: "#trenerka" },
-  { label: "Galéria", href: "#galeria" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Domov", id: "hero" },
+  { label: "Ako to funguje", id: "ako-to-funguje" },
+  // { label: "Cenník", id: "cennik" },
+  { label: "Trénerka", id: "trenerka" },
+  { label: "Galéria", id: "galeria" },
+  { label: "Kontakt", id: "kontakt" },
 ];
-
 const locations = [
   { name: "Martina Benku", href: "/pobocky/martina-benku" },
   { name: "Šváby", href: "/pobocky/svaby" },
@@ -22,12 +24,24 @@ const locations = [
 ];
 
 export default function Header() {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [locDropOpen, setLocDropOpen] = useState(false);
   const { theme, toggle } = useTheme();
   const location = useLocation();
   const isDark = theme === 'dark';
+
+
+
+  useEffect(() => {
+
+    if (isDark) {
+    console.log("teraz");
+    
+  }
+  },[isDark])
+  
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -38,8 +52,11 @@ export default function Header() {
   // Check if a location sub-page is active
   const isPobockyActive = location.pathname.startsWith('/pobocky');
   const activeSlug = location.pathname.replace('/pobocky/', '');
-
+const logo_tmave = '/public/civim-logo-modra - kópia.png'
+const logo_svetla = '/public/logoTmave - kópia.png'
   return (
+
+
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled
         ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-sm'
@@ -49,22 +66,35 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <img src={LOGO_URL} alt="Cvič Sám" className="h-9" />
+
+         {isDark ?<img src={logo_tmave} alt="Cvič Sám" className="h-9" /> :  <img src={logo_svetla} alt="Cvič Sám" className="h-9" />}
           </Link>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map(link => (
-              <a key={link.label} href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground font-medium transition-colors">
-                {link.label}
-              </a>
+            <button
+              key={link.label}
+              onClick={() => {
+                navigate("/");
+
+                setTimeout(() => {
+                  document.getElementById(link.id)?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }, 100);
+              }}
+              className="text-sm text-muted-foreground hover:text-foreground font-medium transition-colors"
+            >
+              {link.label}
+            </button>
             ))}
 
             {/* Pobočky dropdown */}
             <div className="relative"
               onMouseEnter={() => setLocDropOpen(true)}
               onMouseLeave={() => setLocDropOpen(false)}>
+
               <button className={`text-sm font-medium transition-colors flex items-center gap-1 ${
                 isPobockyActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
               }`}>

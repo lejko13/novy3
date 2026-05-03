@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ArrowRight, ChevronLeft, ChevronRight, X, Check, Calendar } from 'lucide-react';
 import { LOCATIONS } from '../lib/locationsData';
+import Pricing from '../components/landing/Pricing';
 
 export default function GymDetail() {
   const { slug } = useParams();
@@ -282,6 +283,14 @@ export default function GymDetail() {
           </motion.div>
         )}
       </AnimatePresence>
+
+
+      <div className="pb-16 lg:pb-24">
+        <Pricing
+         borderTop={0}
+        ></Pricing>
+
+      </div>
     </div>
   );
 }

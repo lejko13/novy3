@@ -15,7 +15,7 @@ export default function Home() {
       <HowItWorks />
       <WhyUs />
       <Locations />
-      <Pricing />
+      {/* <Pricing /> */}
       <Trainer />
       <Gallery />
       <Contact />

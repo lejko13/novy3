@@ -23,9 +23,13 @@ const plans = [
   },
 ];
 
-export default function Pricing() {
+export default function Pricing({borderTop = 1}) {
   return (
-    <section id="cennik" className="bg-background py-20 lg:py-32 border-t border-border">
+    <section 
+    id="cennik" 
+     className={`bg-background border-border ${
+  borderTop ? "border-t py-20 lg:py-32" : ""
+}`}>
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
