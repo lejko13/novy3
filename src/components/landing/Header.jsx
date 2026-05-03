@@ -52,8 +52,8 @@ export default function Header() {
   // Check if a location sub-page is active
   const isPobockyActive = location.pathname.startsWith('/pobocky');
   const activeSlug = location.pathname.replace('/pobocky/', '');
-const logo_tmave = '/public/civim-logo-modra - kópia.png'
-const logo_svetla = '/public/logoTmave - kópia.png'
+const logo_tmave = '/svetle.png'
+const logo_svetla = '/tmave.png'
   return (
 
 

@@ -10,8 +10,8 @@ export default function Hero() {
 
     const isDark = theme === "dark";
 
-    const logo_tmave = '/public/civim-logo-modra - kópia.png'
-const logo_svetla = '/public/logoTmave - kópia.png'
+ const logo_tmave = '/svetle.png'
+const logo_svetla = '/tmave.png'
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-background">
