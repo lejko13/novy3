@@ -3,19 +3,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const photos = [
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-001-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-002-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-003-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-004-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-005-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-006-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-007-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-008-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-010-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-011-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-012-scaled.jpg",
-  "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-013-scaled.jpg",
+    "/benko/martinbenka1.jpg",
+  "/benko/martinbenka2.jpg",
+
+  "/benko/martinbenka4.jpg",
+
+  "/benko/martinbenka6.jpg",
+   "/svaby/sva1.jpg",
+
+  "/svaby/sva3.jpg",
+ 
+  "/svaby/sva5.jpg",
+
+  "/svaby/sva7.jpg",
 ];
+
+
 
 export default function Gallery() {
   const [lightboxIdx, setLightboxIdx] = useState(null);
