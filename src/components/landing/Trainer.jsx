@@ -8,6 +8,8 @@ const specialties = [
   "Stravovacie plány", "Zdravé stravovanie",
 ];
 
+const fotka  = '/trener.jpg'
+
 export default function Trainer() {
   return (
     <section id="trenerka" className="bg-secondary/40 py-20 lg:py-32 border-t border-border">
@@ -21,7 +23,7 @@ export default function Trainer() {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden">
-              <img src="https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-009-1-scaled.jpg"
+              <img src={fotka}
                 alt="Trénerka Michaela"
                 className="w-full h-[500px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
