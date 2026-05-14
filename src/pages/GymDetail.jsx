@@ -11,6 +11,9 @@ export default function GymDetail() {
   const [activeImg, setActiveImg] = useState(0);
   const [lightbox, setLightbox] = useState(null);
 
+
+  console.log(gym);
+  
   if (!gym) {
     return (
       <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-4 pt-20">

@@ -13,13 +13,16 @@ export default function Hero() {
  const logo_tmave = '/svetle.png'
 const logo_svetla = '/tmave.png'
 
+
+const fotka  = '/public/main.jpg'
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-background">
       {/* Background gym photo */}
       <div className="absolute inset-0">
         
         <img
-          src="https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-002-scaled.jpg"
+          src={fotka}
           alt="Cvič Sám - súkromná posilňovňa"
           className="w-full h-full object-cover opacity-20 dark:opacity-40"
         />

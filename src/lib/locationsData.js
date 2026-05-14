@@ -1,5 +1,9 @@
 export const LOCATIONS = [
   {
+
+
+   
+
     id: 1,
     slug: "martina-benku",
     name: "Martina Benku",
@@ -8,16 +12,16 @@ export const LOCATIONS = [
     address: "Martina Benku 7887/1A, 080 01 Prešov",
     desc: "Hlavná prevádzka s priamou rezerváciou cez Gymify.",
     bookHref: "https://gymify.sk/gyms/cvic-sam/booking",
-    img: "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-002-scaled.jpg",
+    img:   "/benko/martinbenka3.jpg",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2630.8!2d21.255!3d49.001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473eed0c743b96e3%3A0x40b38bed512e6860!2sMartina%20Benku%207887%2F1A%2C%20080%2001%20Pre%C5%A1ov!5e0!3m2!1ssk!2ssk!4v1700000000000",
-    gallery: [
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-001-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-002-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-003-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-004-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-005-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-006-scaled.jpg",
-    ],
+      gallery: [
+  "/benko/martinbenka1.jpg",
+  "/benko/martinbenka2.jpg",
+  "/benko/martinbenka3.jpg",
+  "/benko/martinbenka4.jpg",
+  "/benko/martinbenka5.jpg",
+  "/benko/martinbenka6.jpg",
+],
     equipment: [
       { icon: "🏃", label: "Cardio zóna", desc: "Bežiace pásy, rotoped" },
       { icon: "🏋️", label: "Silová zóna", desc: "Smithov stroj, káblovka, leg press" },
@@ -36,6 +40,9 @@ export const LOCATIONS = [
   },
   {
     id: 2,
+     
+ 
+
     slug: "svaby",
     name: "Šváby",
     title: "Cvič Sám – Šváby",
@@ -43,16 +50,20 @@ export const LOCATIONS = [
     address: "Švábska 41/A, 080 05 Prešov",
     desc: "Druhá prevádzka pre tréning v súkromnom režime.",
     bookHref: "https://gymify.sk/gyms/cvic-sam-svaby/booking?reservable=238",
-    img: "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-007-scaled.jpg",
+    img:  "/svaby/sva1.jpg",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2630!2d21.27!3d49.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473eeda4fc470121%3A0xa7c254f896b81052!2sŠv%C3%A1bska%2041%2FA%2C%20080%2005%20Pre%C5%A1ov!5e0!3m2!1ssk!2ssk!4v1700000000001",
-    gallery: [
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-007-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-008-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-010-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-011-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-012-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-013-scaled.jpg",
-    ],
+
+
+    
+gallery: [
+  "/svaby/sva1.jpg",
+  "/svaby/sva2.jpg",
+  "/svaby/sva3.jpg",
+  "/svaby/sva4.jpg",
+  "/svaby/sva5.jpg",
+  "/svaby/sva6.jpg",
+  "/svaby/sva7.jpg",
+],
     equipment: [
       { icon: "🏃", label: "Cardio zóna", desc: "Eliptický trenažér, bežiaci pás" },
       { icon: "🏋️", label: "Silová zóna", desc: "Benchpress, káblovka" },
@@ -69,40 +80,40 @@ export const LOCATIONS = [
       "24/7 prevádzka cez QR kód",
     ],
   },
-  {
-    id: 3,
-    slug: "lazovna-bb",
-    name: "Lazovná BB",
-    title: "Cvič Sám – Lazovná BB",
-    city: "Banská Bystrica",
-    address: "Lazovná ul., 974 01 Banská Bystrica",
-    desc: "Nová pobočka v Banskej Bystrici — súkromný tréning v srdci mesta.",
-    bookHref: "https://gymify.sk/gyms/cvic-sam/booking",
-    img: "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-014-scaled.jpg",
-    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638!2d19.153!3d48.734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4714c0f14d0d9a71%3A0x400f7d1c69b4d50!2sLazovn%C3%A1%2C%20Bansk%C3%A1%20Bystrica!5e0!3m2!1ssk!2ssk!4v1700000000002",
-    gallery: [
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-014-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-015-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-016-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-017-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-018-scaled.jpg",
-      "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-001-scaled.jpg",
-    ],
-    equipment: [
-      { icon: "🏃", label: "Cardio zóna", desc: "Bežiace pásy, veslovací trenažér" },
-      { icon: "🏋️", label: "Silová zóna", desc: "Smithov stroj, leg press, káblovka" },
-      { icon: "⚖️", label: "Voľné váhy", desc: "Plná sada činiek 2–50 kg" },
-      { icon: "🔩", label: "Funkčná zóna", desc: "TRX, kettlebells, medicinbaly" },
-      { icon: "🧘", label: "Strečing zóna", desc: "Podložky, foam roller, barre" },
-      { icon: "☕", label: "Relax kútik", desc: "Kávovar, chladená voda" },
-    ],
-    features: [
-      "Centrum Banskej Bystrice",
-      "Parkovanie v blízkosti vstupu",
-      "Klimatizácia & rekuperácia vzduchu",
-      "Nové prémiové vybavenie",
-      "24/7 prevádzka cez QR kód",
-      "Výhľad na historické centrum",
-    ],
-  },
+  // {
+  //   id: 3,
+  //   slug: "lazovna-bb",
+  //   name: "Lazovná BB",
+  //   title: "Cvič Sám – Lazovná BB",
+  //   city: "Banská Bystrica",
+  //   address: "Lazovná ul., 974 01 Banská Bystrica",
+  //   desc: "Nová pobočka v Banskej Bystrici — súkromný tréning v srdci mesta.",
+  //   bookHref: "https://gymify.sk/gyms/cvic-sam/booking",
+  //   img: "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-014-scaled.jpg",
+  //   mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638!2d19.153!3d48.734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4714c0f14d0d9a71%3A0x400f7d1c69b4d50!2sLazovn%C3%A1%2C%20Bansk%C3%A1%20Bystrica!5e0!3m2!1ssk!2ssk!4v1700000000002",
+  //   gallery: [
+  //     "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-014-scaled.jpg",
+  //     "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-015-scaled.jpg",
+  //     "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-016-scaled.jpg",
+  //     "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-017-scaled.jpg",
+  //     "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-018-scaled.jpg",
+  //     "https://cvicsam.sk/wp-content/uploads/2025/11/foto_fitko-001-scaled.jpg",
+  //   ],
+  //   equipment: [
+  //     { icon: "🏃", label: "Cardio zóna", desc: "Bežiace pásy, veslovací trenažér" },
+  //     { icon: "🏋️", label: "Silová zóna", desc: "Smithov stroj, leg press, káblovka" },
+  //     { icon: "⚖️", label: "Voľné váhy", desc: "Plná sada činiek 2–50 kg" },
+  //     { icon: "🔩", label: "Funkčná zóna", desc: "TRX, kettlebells, medicinbaly" },
+  //     { icon: "🧘", label: "Strečing zóna", desc: "Podložky, foam roller, barre" },
+  //     { icon: "☕", label: "Relax kútik", desc: "Kávovar, chladená voda" },
+  //   ],
+  //   features: [
+  //     "Centrum Banskej Bystrice",
+  //     "Parkovanie v blízkosti vstupu",
+  //     "Klimatizácia & rekuperácia vzduchu",
+  //     "Nové prémiové vybavenie",
+  //     "24/7 prevádzka cez QR kód",
+  //     "Výhľad na historické centrum",
+  //   ],
+  // },
 ];

@@ -6,6 +6,7 @@ import { useTheme } from '../../lib/ThemeContext'
 
 
 import { useNavigate } from 'react-router-dom';
+import {siteData} from '../../data/headerfooter'
 
 
 
@@ -28,19 +29,21 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [locDropOpen, setLocDropOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const { theme, toggle } = useTheme();
   const location = useLocation();
   const isDark = theme === 'dark';
 
 
 
-  useEffect(() => {
 
-    if (isDark) {
-    console.log("teraz");
+  // useEffect(() => {
+
+  //   if (isDark) {
+  //   console.log("teraz");
     
-  }
-  },[isDark])
+  // }
+  // },[isDark])
   
 
   useEffect(() => {
@@ -65,73 +68,127 @@ const logo_svetla = '/tmave.png'
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-
-         {isDark ?<img src={logo_tmave} alt="Cvič Sám" className="h-9" /> :  <img src={logo_svetla} alt="Cvič Sám" className="h-9" />}
-          </Link>
+        <Link
+          to="/"
+          className="flex-shrink-0"
+          onClick={() => {
+            setTimeout(() => {
+              document.getElementById("hero")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }, 100);
+          }}
+        >
+          {isDark ? (
+            <img src={logo_tmave} alt="Cvič Sám" className="h-9" />
+          ) : (
+            <img src={logo_svetla} alt="Cvič Sám" className="h-9" />
+          )}
+        </Link>
 
           {/* Desktop nav */}
+
           <nav className="hidden lg:flex items-center gap-6">
-            {navLinks.map(link => (
-            <button
-              key={link.label}
-              onClick={() => {
-                navigate("/");
+  {siteData.navLinks.map(link => {
 
-                setTimeout(() => {
-                  document.getElementById(link.id)?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }, 100);
-              }}
-              className="text-sm text-muted-foreground hover:text-foreground font-medium transition-colors"
-            >
-              {link.label}
-            </button>
-            ))}
+    // 🔹 SCROLL SEKCIE
+    if (link.type === "scroll") {
+      return (
+        <button
+          key={link.label}
+          onClick={() => {
+            navigate("/");
 
-            {/* Pobočky dropdown */}
-            <div className="relative"
-              onMouseEnter={() => setLocDropOpen(true)}
-              onMouseLeave={() => setLocDropOpen(false)}>
+            setTimeout(() => {
+              document.getElementById(link.id)?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }, 100);
+          }}
+          className="text-sm text-muted-foreground hover:text-foreground font-medium transition-colors"
+        >
+          {link.label}
+        </button>
+      );
+    }
 
-              <button className={`text-sm font-medium transition-colors flex items-center gap-1 ${
-                isPobockyActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-              }`}>
-                Pobočky <ChevronDown className={`w-3.5 h-3.5 transition-transform ${locDropOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {locDropOpen && (
-                  <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 6 }} transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-1 w-52 bg-popover border border-border rounded-lg shadow-xl overflow-hidden">
-                    {locations.map(loc => {
-                      const isActive = location.pathname === loc.href;
-                      return (
-                        <Link key={loc.name} to={loc.href}
-                          className={`flex items-center gap-2 px-4 py-2.5 text-sm transition-colors ${
-                            isActive
-                              ? 'text-primary bg-primary/8 font-semibold'
-                              : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                          }`}>
-                          {isActive && <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />}
-                          {loc.name}
-                        </Link>
-                      );
-                    })}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+    // 🔹 ROUTE (napr. FAQ)
+    if (link.type === "route") {
+      const isActive = location.pathname === link.href;
 
-            <Link to="/faq"
-              className={`text-sm font-medium transition-colors ${
-                location.pathname === '/faq' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-              }`}>
-              FAQ
-            </Link>
-          </nav>
+      return (
+        <Link
+          key={link.label}
+          to={link.href}
+          className={`text-sm font-medium transition-colors ${
+            isActive
+              ? "text-primary"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          {link.label}
+        </Link>
+      );
+    }
 
+    // 🔹 DROPDOWN (POBOČKY)
+    if (link.type === "dropdown") {
+      return (
+        <div
+          key={link.label}
+          className="relative"
+          onMouseEnter={() => setOpenDropdown(link.label)}
+          onMouseLeave={() => setOpenDropdown(null)}
+        >
+          <button className="text-sm font-medium flex items-center gap-1 text-muted-foreground hover:text-foreground">
+            {link.label}
+            <ChevronDown
+              className={`w-3.5 h-3.5 transition-transform ${
+                openDropdown === link.label ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          <AnimatePresence>
+            {openDropdown === link.label && (
+              <motion.div
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 6 }}
+                className="absolute top-full left-0 mt-1 w-52 bg-popover border border-border rounded-lg shadow-xl overflow-hidden"
+              >
+                {link.items.map(item => {
+                  const isActive = location.pathname === item.href;
+
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`flex items-center gap-2 px-4 py-2.5 text-sm transition-colors ${
+                        isActive
+                          ? "text-primary bg-primary/8 font-semibold"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      }`}
+                    >
+                      {isActive && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      )}
+                      {item.name}
+                    </Link>
+                  );
+                })}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      );
+    }
+
+    return null;
+  })}
+</nav>
+      
+  
           <div className="hidden lg:flex items-center gap-2">
             {/* Theme toggle */}
             <button onClick={toggle}
