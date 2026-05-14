@@ -14,7 +14,7 @@ export default function Hero() {
 const logo_svetla = '/tmave.png'
 
 
-const fotka  = '/public/main.jpg'
+const fotka  = '/main.jpg'
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-background">
