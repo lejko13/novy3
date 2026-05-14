@@ -4,18 +4,21 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const photos = [
     "/benko/martinbenka1.jpg",
+      "/svaby/sva3.jpg",
   "/benko/martinbenka2.jpg",
-
-  "/benko/martinbenka4.jpg",
-
-  "/benko/martinbenka6.jpg",
-   "/svaby/sva1.jpg",
-
-  "/svaby/sva3.jpg",
- 
   "/svaby/sva5.jpg",
+  "/benko/martinbenka4.jpg",
+   "/svaby/sva1.jpg",
+  "/benko/martinbenka5.jpg",
+ "/svaby/sva7.jpg",
+  "/benko/martinbenka6.jpg",
+  
 
-  "/svaby/sva7.jpg",
+
+ 
+
+
+ 
 ];
 
 
