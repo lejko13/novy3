@@ -17,6 +17,7 @@ export const siteData = {
   "/benko/martinbenka3.jpg",
   "/benko/martinbenka4.jpg",
   "/benko/martinbenka5.jpg",
+  "/benko/martinbenka6.jpg",
 
 ],
     address: "Martina Benku 7887/1A, 080 01 Prešov",
