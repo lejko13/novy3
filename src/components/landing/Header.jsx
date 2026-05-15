@@ -21,7 +21,7 @@ const navLinks = [
 const locations = [
   { name: "Martina Benku", href: "/pobocky/martina-benku" },
   { name: "Šváby", href: "/pobocky/svaby" },
-  { name: "Lazovná BB", href: "/pobocky/lazovna-bb" },
+  // { name: "Lazovná BB", href: "/pobocky/lazovna-bb" },
 ];
 
 export default function Header() {
@@ -251,6 +251,7 @@ const logo_svetla = '/tmave.png'
           </motion.div>
         )}
       </AnimatePresence>
+      
     </header>
   );
 }

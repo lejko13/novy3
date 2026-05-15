@@ -30,7 +30,7 @@ const fotka  = '/main.jpg'
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 lg:px-8 pt-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 lg:px-8 pt-20 pb-5">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           {/* Left */}
           <div>
